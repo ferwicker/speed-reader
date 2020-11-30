@@ -1,0 +1,41 @@
+body {
+    background-color: #E8E3DB;
+    padding: 50px;
+    font-family:  'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #383838;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.instructions {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Option selections form */
+.form-group {
+    padding-top: 20px;
+}
+
+.custom-control-inline {
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+.arial-bold {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.georgia {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.pt-mono {
+    font-family: 'PT Mono', monospace;
+}
