@@ -23,16 +23,16 @@
         <div class="main">
             <h1>This is a speed reader 📚</h1>
             <p class="instructions">Select from the choices below and read any text fast!🔥🔥</p>
-            <form class="content-wrap">
+            <form class="content-wrap options-form">
 
                 <div class="form-group">
-                  <label for="wpm">How many words per minute? (Recommended between 200-400)</label>
-                  <input type="text" class="form-control" id="InputName" aria-describedby="wordsperminute">
+                  <label for="wordsMinute">How many words per minute? (Recommended between 200-400)</label>
+                  <input type="text" class="form-control" id="wordsMinute">
                 </div>
 
                 <div>
                     <p>Choose your font:</p>
-                    <div>
+                    <div id="font-select">
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="arial-bold" name="font-select" class="custom-control-input">
                             <label class="custom-control-label arial-bold" for="arial-bold">Arial Bold</label>
@@ -50,13 +50,35 @@
                     </div>
                 </div>
 
+                <div>
+                    <p>Choose your contrast:</p>
+                    <div id="contrast-select">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="high-constrast" name="contrast-select" class="custom-control-input">
+                            <label class="custom-control-label" for="high-constrast">High contrast (black/white)</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="mild-contrast" name="contrast-select" class="custom-control-input">
+                            <label class="custom-control-label" for="mild-contrast">Mild contrast (current)</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="dark-contrast" name="contrast-select" class="custom-control-input">
+                            <label class="custom-control-label" for="dark-contrast">Dark Theme</label>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group">
                   <label for="text">Paste your text below:</label>
                   <textarea class="form-control rounded-2" id="text" rows="3"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-dark">Submit</button>
+                <button type="submit" id="submit" class="btn button">Start reading!</button>
               </form>
+
+              <footer>Designed and developed by <a href="https://github.com/ferwicker" target="_blank">Fer Wicker</a>, an avid reader.</footer>
         </div>
 
 
@@ -67,6 +89,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
         <!--My JS-->
-        <script src="script.js" type="javascript"></script>
+        <script src="script.js"></script>
     </body>
 </html>

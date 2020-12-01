@@ -1,6 +1,7 @@
 body {
     background-color: #E8E3DB;
-    padding: 50px;
+    padding-top: 50px;
+    padding-bottom: 20px;
     font-family:  'Montserrat', sans-serif;
     font-size: 20px;
     color: #383838;
@@ -12,13 +13,36 @@ h1 {
     text-align: center;
 }
 
+a {
+    color: indianred;
+}
+
+a:hover {
+    color: rgb(206, 122, 122);
+}
+
 .instructions {
     font-size: 24px;
     font-weight: 600;
+    text-align: center;
+}
+
+.button {
+    color: whitesmoke;
+    font-size: 16px;
+    padding: 9px 25px;
+    background-color: indianred;
+    border-style: none;
+    border-radius: 25px;
+}
+
+.button:hover {
+    background-color: rgb(206, 122, 122);
+    color: whitesmoke;
 }
 
 /* Option selections form */
-.form-group {
+.options-form {
     padding-top: 20px;
 }
 
@@ -38,4 +62,11 @@ h1 {
 
 .pt-mono {
     font-family: 'PT Mono', monospace;
+}
+
+/* Footer */
+footer {
+    padding-top: 60px;
+    font-size: 12px;
+    text-align: center;
 }
