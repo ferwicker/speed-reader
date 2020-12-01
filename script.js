@@ -11,12 +11,15 @@ var georgia = document.getElementById("georgia");
 var ptMono = document.getElementById("pt-mono");
 
 var contrastEl = document.getElementById("contrast-select");
+var highContrast = document.getElementById("high-contrast");
+var mildContrast = document.getElementById("mild-contrast");
+var darkContrast = document.getElementById("dark-contrast");
 
 var submit = document.getElementById("submit");
 
 
 
-// Font Changer - do same for colours
+// Font Changer 
 
 arial.addEventListener("click", function() {    
         body.classList.add("arial-bold");
@@ -31,6 +34,23 @@ georgia.addEventListener("click", function() {
 ptMono.addEventListener("click", function() {    
     body.classList.add("pt-mono");
     body.classList.remove("georgia", "arial-bold")
+});
+
+// Colour Changer
+
+highContrast.addEventListener("click", function() {    
+    body.classList.add("high-contrast");
+    body.classList.remove("mild-contrast", "dark-contrast")
+});
+
+mildContrast.addEventListener("click", function() {    
+    body.classList.add("mild-contrast");
+    body.classList.remove("high-contrast", "dark-contrast")
+});
+
+darkContrast.addEventListener("click", function() {    
+body.classList.add("dark-contrast");
+body.classList.remove("high-contrast", "mild-contrast")
 });
 
 

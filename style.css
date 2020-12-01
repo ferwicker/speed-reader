@@ -51,6 +51,8 @@ a:hover {
     margin-bottom: 20px;
 }
 
+/* Fonts */
+
 .arial-bold {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -62,6 +64,22 @@ a:hover {
 
 .pt-mono {
     font-family: 'PT Mono', monospace;
+}
+
+/* Colours */
+.high-contrast{
+    background-color: white;
+    color: black;
+}
+
+.mild-contrast{
+    background-color:#E8E3DB;
+    color: #383838;
+}
+
+.dark-contrast {
+    background-color:#494949;
+    color: #dadada; 
 }
 
 /* Footer */
