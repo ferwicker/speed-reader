@@ -27,6 +27,10 @@ a:hover {
     text-align: center;
 }
 
+.smaller {
+    font-size: 16px;
+}
+
 .button {
     color: whitesmoke;
     font-size: 16px;
