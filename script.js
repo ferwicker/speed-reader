@@ -83,6 +83,10 @@ var calculateSpeed = function (){
       var readInterval = setInterval(function(){
         if (words[i] === undefined) {
           clearInterval(readInterval);
+          goToScreen1();
+          readerScreen.textContent = 'Get ready!';
+          i = 0;
+
         } else {
           readerScreen.textContent = words[i]; //change element
           i++;
@@ -99,7 +103,7 @@ function prepareRead() {
     readerScreen.textContent = secondsLeft
     secondsLeft--;
   
-      if (secondsLeft === 0) {
+      if (secondsLeft === -1) {
         readerScreen.textContent = '' // need to create the timer element, hide the main container
         clearInterval(timeInterval);
         speedRead(); //calling speedRead function at end of timer! leave this one here.
@@ -107,15 +111,16 @@ function prepareRead() {
     }, 1000);
   };
 
+
 function goToScreen2(){
-    mainScreen.classList.add("hide");
+    mainScreen.setAttribute("style", "visibility: hidden;");
     readerScreen.classList.remove("hide");
 };
 
 function goToScreen1(){
-    mainScreen.classList.remove("hide");
+    mainScreen.setAttribute("style", "visibility: visible;");
     readerScreen.classList.add("hide");
-};
+}
 
 function startReading (event){
     event.preventDefault();
@@ -123,6 +128,5 @@ function startReading (event){
     prepareRead();
 }
 
-//add reset to start.
 
 submit.addEventListener("click", startReading)
