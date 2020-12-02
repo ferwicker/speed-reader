@@ -20,7 +20,7 @@
     </head>
 
     <body class="d-flex flex-column justify-content-center align-items-center">
-        <div class="main">
+        <div id="main">
             <h1>This is a speed reader 📚</h1>
             <p class="instructions">Select from the choices below and read any text fast!🔥🔥</p>
             <form class="content-wrap options-form">
@@ -33,6 +33,11 @@
                 <div>
                     <p>Choose your font:</p>
                     <div id="font-select">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="montserrat" name="font-select" class="custom-control-input">
+                            <label class="custom-control-label montserrat" for="montserrat">Monsterrat(default)</label>
+                        </div>
+
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="arial-bold" name="font-select" class="custom-control-input">
                             <label class="custom-control-label arial-bold" for="arial-bold">Arial Bold</label>
@@ -79,6 +84,10 @@
               </form>
 
               <footer>Designed and developed by <a href="https://github.com/ferwicker" target="_blank">Fer Wicker</a>, an avid reader.</footer>
+        </div>
+
+        <div id="screen-2" class="d-flex justify-content-center align-items-center hide" >
+            <span id="reader">Get ready!</span>
         </div>
 
 

@@ -66,6 +66,10 @@ a:hover {
     font-family: 'PT Mono', monospace;
 }
 
+.montserrat {
+    font-family:  'Montserrat', sans-serif;
+}
+
 /* Colours */
 .high-contrast{
     background-color: white;
@@ -87,4 +91,17 @@ footer {
     padding-top: 60px;
     font-size: 12px;
     text-align: center;
+}
+
+#screen-2 {
+    min-height: 100vh;
+    font-size: 100px;
+    position: absolute;
+    top: 0;
+}
+
+/* hide control */
+
+.hide {
+    visibility: hidden;
 }
