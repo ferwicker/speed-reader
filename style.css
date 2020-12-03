@@ -1,6 +1,6 @@
 body {
     background-color: #E8E3DB;
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 20px;
     font-family:  'Montserrat', sans-serif;
     font-size: 20px;
@@ -43,6 +43,12 @@ a:hover {
 .button:hover {
     background-color: rgb(206, 122, 122);
     color: whitesmoke;
+}
+
+#stop-button {
+    padding: 9px 50px;
+    position: absolute;
+    bottom: 70px;
 }
 
 /* Option selections form */
@@ -92,7 +98,7 @@ a:hover {
 
 /* Footer */
 footer {
-    padding-top: 60px;
+    padding-top: 40px;
     font-size: 12px;
     text-align: center;
 }

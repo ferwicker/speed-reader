@@ -1,8 +1,7 @@
-console.log("connected");
-
 var body = document.querySelector("body");
 var mainScreen = document.getElementById("main");
 var readerScreen = document.getElementById("screen-2");
+var readerArea = document.getElementById("reader");
 
 var wordsEl = document.getElementById("wordsMinute"); //to calculate speed
 
@@ -21,7 +20,7 @@ var mildContrast = document.getElementById("mild-contrast");
 var darkContrast = document.getElementById("dark-contrast");
 
 var submit = document.getElementById("submit");
-
+var stopButton = document.getElementById("stop-button");
 
 
 // Font Changer 
@@ -73,6 +72,8 @@ var calculateSpeed = function (){
     return speed;
 }
 
+var readInterval;
+
   // Print words to the screen one at a time. needs revising.
   var i = 0;
   function speedRead() {
@@ -80,37 +81,40 @@ var calculateSpeed = function (){
       console.log(speed);
       var text = textEl.value
       var words = text.split(" ");
-      var readInterval = setInterval(function(){
+      readInterval = setInterval(function(){ // move out
         if (words[i] === undefined) {
           clearInterval(readInterval);
           goToScreen1();
-          readerScreen.textContent = 'Get ready!';
+          readerArea.textContent = 'Get ready!';
           i = 0;
 
         } else {
-          readerScreen.textContent = words[i]; //change element
+          readerArea.textContent = words[i]; //change element
           i++;
         }
+
       }, speed);
   
   }
 
 // Create the countdown timer.
+var timeInterval;
 
 function prepareRead() {
     var secondsLeft = 5;
-    var timeInterval = setInterval(function(){
-    readerScreen.textContent = secondsLeft
+    timeInterval = setInterval(function(){
+    readerArea.textContent = secondsLeft
     secondsLeft--;
   
       if (secondsLeft === -1) {
-        readerScreen.textContent = '' // need to create the timer element, hide the main container
+        readerArea.textContent = '' // need to create the timer element, hide the main container
         clearInterval(timeInterval);
         speedRead(); //calling speedRead function at end of timer! leave this one here.
       }
     }, 1000);
   };
 
+//changing visibility of the screens
 
 function goToScreen2(){
     mainScreen.setAttribute("style", "visibility: hidden;");
@@ -122,11 +126,31 @@ function goToScreen1(){
     readerScreen.classList.add("hide");
 }
 
+// When submit button is clicked
+
 function startReading (event){
     event.preventDefault();
     goToScreen2();
     prepareRead();
 }
 
+//Stop Reading **
+function stopReading (event){
+    goToScreen1();
 
-submit.addEventListener("click", startReading)
+    if(timeInterval || readInterval){
+      clearInterval(timeInterval);
+      clearInterval(readInterval);
+    }
+
+    readerArea.textContent = 'Get ready!';
+    secondsLeft = 5;
+    i = 0;
+
+    //if interval is not undefined stop interval
+} 
+
+// Button event listeners
+
+submit.addEventListener("click", startReading);
+stopButton.addEventListener("click", stopReading);
